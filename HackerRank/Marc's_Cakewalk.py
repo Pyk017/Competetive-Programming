@@ -1,0 +1,5 @@
+n = int(input())
+arr = list(map(int, input().split()))
+arr.sort(reverse=True)
+result = sum([2**i * arr[i] for i in range(len(arr))])
+print(result)
