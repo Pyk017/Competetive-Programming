@@ -3,6 +3,7 @@ def candy(arr):
     for i in range(1, len(arr)):
         if arr[i] > arr[i-1]:
             res[i] += res[i-1]
+    print(res)
     for i in range(len(arr)-2, -1, -1):
         if arr[i] > arr[i+1] and res[i] <= res[i+1]:
             res[i] = res[i+1] + 1
