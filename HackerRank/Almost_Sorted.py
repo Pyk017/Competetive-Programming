@@ -32,7 +32,7 @@ n = int(input())
 arr = list(map(int, input().split()))
 res = almost(arr)
 if res.startswith('no'):
-    print(res)
+    print(res) 
 else:
     print('yes')
     print(res)
