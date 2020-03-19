@@ -1,7 +1,7 @@
 """
 Sample Input : 2 4
                16 32 96
-Output : 3
+Output : 3im
 Explanation : 2 and 4 divide evenly into 4, 8, 12, and 16.
 4, 8 and 16 divide evenly into 16, 32, 96.
 4, 8 and 16 are the only 3 numbers for which each elements of 'a' is a factor and each is a factor of all elements of b.
