@@ -25,36 +25,20 @@ def display(head):
         display(head.next)
 
 
-def insert_here(head, data):
-    node = Node(data)
-    if not head:
-        return node
-    p = head
-    q = None
-    while p:
-        q = p
-        p = p.next
-    q.next = node
-    return head
-
-
-def merge_lists(head1, head2, head3):
-    if not head1:
+def merge_lists(head1, head2):
+    if not head1 and not head2:
+        return None
+    elif not head1:
         return head2
     elif not head2:
         return head1
     else:
-        while head1 or head2:
-            try:
-                if head1 != None and (head1.data <= head2.data or head2 == None):
-                    head3 = insert_here(head3, head1.data)
-                    head1 = head1.next
-                else:
-                    head3 = insert_here(head3, head2.data)
-                    head2 = head2.next
-            except AttributeError:
-                pass    
-    return head3
+        if head1.data < head2.data:
+            head1.next = merge_lists(head1.next, head2)
+            return head1
+        else:
+            head2.next = merge_lists(head2.next, head1)
+            return head2
 
 
 n = int(input())
@@ -66,6 +50,6 @@ m = int(input())
 link2 = LinkedList()
 for _ in range(m):
     link2.insert(int(input()))
-link3 = LinkedList()
-link3.head = merge_lists(link1.head, link2.head, link3.head)
-display(link3.head)
+
+link1.head = merge_lists(link1.head, link2.head)
+display(link1.head)
