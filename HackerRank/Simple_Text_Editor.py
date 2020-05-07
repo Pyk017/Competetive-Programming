@@ -12,4 +12,3 @@ for _ in range(int(input())):
         print(string[int(query[1]) - 1])
     else:
         string = stack.pop()
-
