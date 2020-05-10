@@ -1,32 +1,28 @@
 def spread(ar):
+    mini, maxi = 11, -1
+    
     if len(ar) == 2:
-        diff = abs(ar[0] - ar[1])
-        return (1, 1) if diff > 2 else (2, 2)
-    else:
-        res = []
-        b, w = 1, 1
-        for i in range(1, len(ar)):
-            diff = abs(ar[i-1] - ar[i])
-            res.append(diff)
-        temp = 1
-        ls = []
-        count = 0
-        for j in range(len(res)):
-            if res[j] <= 2:
-                count += 1
-                temp += res[j]
-            else:
-                ls.append(temp)
-                temp = 1
-        
-        if count == len(res):
-            return (len(ar), len(ar))
+        return (1, 1)
+    
+    total = 1
+    for i in range(1, len(ar)):
+        if abs(ar[i-1] - ar[i]) <= 2:
+            total += 1
         else:
-            ls.append(temp)
-            return (min(ls), max(ls))
+            mini = min(mini, total)
+            maxi = max(maxi, total)
+            total = 1
+
+    mini = min(mini, total)
+    maxi = max(maxi, total)
+    
+    if maxi == len(ar):
+        mini = maxi
+    
+    return (mini, maxi)
 
 
 n = int(input())
 arr = list(map(int, input().split()))
 res = spread(arr)
-print(res)
+print(*res)
