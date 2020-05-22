@@ -43,5 +43,5 @@ def all_anagrams(s, p):
 
 s = input()
 p = input()
-res = all_anagram(s, p)
+res = all_anagrams(s, p)
 print(res)

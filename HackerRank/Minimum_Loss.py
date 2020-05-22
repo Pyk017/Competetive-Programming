@@ -22,3 +22,14 @@ for j in range(len(numbers)):
     dig.append((numbers[j], j + 1))
 
 print(minimum_loss(dig))
+
+
+
+
+
+def average(a):
+    res = []
+    for i in a:
+        s = sum(i) / len(i)
+        res.append(s)
+    return s
