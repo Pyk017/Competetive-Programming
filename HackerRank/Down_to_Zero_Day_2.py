@@ -20,6 +20,26 @@ def compute(n):
 
 num = int(input("Enter Number :- "))
 print(compute(num))
+
+# Alternative Solution.
+"""
+N = 10**6
+
+moves = [0] + N * [N]
+# print(moves)
+for i in range(N):
+    moves[i+1] = min(moves[i+1], moves[i] + 1)
+    j = 2
+    while j <= i and j * i <= N:
+        moves[i * j] = min(moves[i * j], moves[i] + 1)
+        j += 1
+
+for _ in range(int(input())):
+    print(moves[int(input())])
+"""
+
+
+
 =======
 def compute(n):
     dp = [-1] * 10001
