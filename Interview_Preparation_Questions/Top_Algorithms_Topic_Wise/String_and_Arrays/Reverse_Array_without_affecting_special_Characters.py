@@ -19,9 +19,9 @@ def reverse(st):
     l, r = 0, n - 1
     st = list(st)
     while l <= r:
-        if st[l].isalpha():
+        if not st[l].isalpha():
             l += 1
-        elif st[r].isalpha():
+        if not st[r].isalpha():
             r -= 1
         else:
             st[l], st[r] = st[r], st[l]
