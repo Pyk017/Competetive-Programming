@@ -3,24 +3,26 @@ using namespace std;
 
 class Solution{
     public:
-    
     void rotateArr(int arr[], int d, int n){
-        int temp;
-    
-        for (int i=0; i<n; i++) {
-            temp = arr[i];
-            arr[i] = arr[(i + d) % n];
-            arr[(i + d) % n] = arr[n - d];
-            arr[n - d] = temp;
+        int temp[d];
+        
+        for(int i=0; i<d; i++) {
+            temp[i] = arr[i];
         }
         
-        // for(int i=0; i<n; i++) {
-        //     cout << arr[i] << " ";
-        // }
-        // cout << endl;
+        for (int i=0; i<(n - d); i++) {
+            arr[i] = arr[i + d];
+        }
+        
+        int diff = n - d;
+        
+        for(int k = 0; k < d; k++) {
+            arr[k + diff] = temp[k];
+        }
+        
+        
     }
 };
-
 
 
 int main() {
@@ -44,6 +46,6 @@ int main() {
         cout << arr[i] << " ";
     }
     cout << endl;
-	
-	return 0;
+    
+    return 0;
 }
