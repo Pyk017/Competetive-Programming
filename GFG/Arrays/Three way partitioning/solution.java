@@ -99,8 +99,7 @@ class GFG{
 class Solution{
     //Function to partition the array around the range such 
     //that array is divided into three parts.
-    public void threeWayPartition(int array[], int a, int b)
-    {
+    public void threeWayPartition(int array[], int a, int b){
         int temp, j=0;
         int n = array.length;
         
@@ -132,4 +131,31 @@ class Solution{
             }
         }
     }
+
+    public void betterSolution(int array[], int a, int b) {
+        int n = array.length;
+        int start = 0;
+        int end = n - 1;
+        int i=0, temp=0;
+
+        while (i <= end) {
+            if (array[i] < a) {
+                temp = array[start];
+                array[start] = array[i];
+                array[i] = temp;
+                start += 1;
+                i += 1;
+            } 
+            else if (array[i] > b) {
+                temp = array[end];
+                array[end] = array[i];
+                array[i] = temp;
+                end -= 1;
+            }
+            else {
+                i += 1;
+            }
+        }
+    }
+
 }

@@ -6,8 +6,7 @@ class Solution{
 public:
     //Function to partition the array around the range such 
     //that array is divided into three parts.
-    void threeWayPartition(vector<int>& array,int a, int b)
-    {
+    void threeWayPartition(vector<int>& array,int a, int b){
         // code here 
         int n = array.size();
         int temp, j=0;
@@ -40,8 +39,35 @@ public:
             }
         }
         
-        
     }
+
+    void betterSolution(vector<int>& array,int a, int b) {
+        int n = array.size();
+        int start = 0;
+        int end = n - 1;
+        int i=0, temp=0;
+
+        while (i <= end) {
+            if (array[i] < a) {
+                temp = array[start];
+                array[start] = array[i];
+                array[i] = temp;
+                start += 1;
+                i += 1;
+            } 
+            else if (array[i] > b) {
+                temp = array[end];
+                array[end] = array[i];
+                array[i] = temp;
+                end -= 1;
+            }
+            else {
+                i += 1;
+            }
+        }
+
+    }
+
 };
 
 // { Driver Code Starts.

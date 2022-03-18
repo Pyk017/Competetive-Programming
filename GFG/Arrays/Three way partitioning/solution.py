@@ -25,6 +25,27 @@ class Solution:
                 j += 1
 
 
+    def betterSolution(self, array, a, b):
+        n = len(array)
+        start, end = 0, n - 1
+
+        i = 0
+
+        while i <= end:
+
+            if array[i] < a:
+                array[start], array[i] = array[i], array[start]
+                start += 1
+                i += 1
+
+            elif array[i] > b:
+                array[end], array[i] = array[i], array[end]
+                end -= 1
+
+            else:
+                i += 1
+
+
 
 from collections import Counter
 
