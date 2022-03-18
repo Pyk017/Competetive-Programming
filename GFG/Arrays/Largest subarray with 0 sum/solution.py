@@ -9,8 +9,8 @@ class Solution:
             Substract i from the stored Sum index, we get the length of the subarray.
             Implemented the maximum logic in it as well.
         '''
-        if n == 8741:
-            return 6303
+        # if n == 8741:
+        #     return 6303
 
         if sum(arr) == 0:
             return n
@@ -25,11 +25,15 @@ class Solution:
         for i in range(n):
             summation += arr[i]
 
-            if summation in temp:
-                maxi = max(maxi, i - temp[summation])
+            if summation == 0:
+                maxi = max(maxi, i + 1)
 
             else:
-                temp[summation] = i
+                if summation in temp:
+                    maxi = max(maxi, i - temp[summation])
+
+                else:
+                    temp[summation] = i
 
         return maxi
 

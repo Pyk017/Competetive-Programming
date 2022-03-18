@@ -24,7 +24,7 @@ class Solution{
     }
 
     int maxLen(vector<int>& A, int n) {
-        if (n == 8741) return 6303;
+        // if (n == 8741) return 6303;
         
         int sum = accumulate(A.begin(), A.end(), 0);
         
@@ -38,6 +38,11 @@ class Solution{
         
         for (int i=0; i<n; i++) {
             sum += A[i];
+
+            if (sum == 0) {
+                maximum = max(maximum, i + 1);
+                continue;
+            }
             
             if (mp.find(sum) != mp.end()) {
                 maximum = max(maximum, i - mp.find(sum)->second);

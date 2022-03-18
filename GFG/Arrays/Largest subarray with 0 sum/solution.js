@@ -22,12 +22,18 @@ class Solution {
         
         arr.forEach((val, idx, array) => {
             sum += val;
-            
-            if (temp.has(sum)) {
-                max = findMax(max, idx - temp.get(sum));
+
+            if (sum == 0) {
+              max = findMax(max, idx + 1);
             } else {
-                temp.set(sum, idx);
+                if (temp.has(sum)) {
+                  max = findMax(max, idx - temp.get(sum));
+               } else {
+                  temp.set(sum, idx);
+                }  
             }
+            
+            
         });
         
         return max;

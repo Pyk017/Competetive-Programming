@@ -32,7 +32,7 @@ class GfG
     
     int maxLen(int arr[], int n)
     {
-        if (n == 8741) return 6303;
+        // if (n == 8741) return 6303;
         
         int sum = sum(arr, n);
         
@@ -46,6 +46,11 @@ class GfG
         
         for(int i=0; i<n; i++){
             sum += arr[i];
+
+            if (sum == 0) {
+                maximum = max(maximum, i + 1);
+                continue;
+            }
             
             if (map.containsKey(sum)) {
                 maximum = max(maximum, i - map.get(sum));
