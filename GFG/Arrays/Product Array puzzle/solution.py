@@ -1,8 +1,7 @@
 class Solution:
     def productExceptSelf(self, nums, n):
 
-        if n == 1:
-            return [1]
+        if n == 1:            return [1]
 
 
         leftProductArray = [0] * n
