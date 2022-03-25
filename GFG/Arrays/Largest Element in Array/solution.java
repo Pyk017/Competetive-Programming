@@ -1,0 +1,38 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main(String[] args) throws IOException{
+        BufferedReader br =
+        new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine().trim());
+        int a[] = new int[n];
+        // long getAnswer[] = new long[(int)(n)];
+        String inputLine[] = br.readLine().trim().split(" ");
+        for (int i = 0; i < n; i++) {
+            a[i] = Integer.parseInt(inputLine[i]);
+        }
+        
+        Compute obj = new Compute();
+        System.out.println(obj.largest(a, n));
+            
+	}
+}
+
+
+class Compute {
+    
+    public int largest(int arr[], int n){
+        int max = arr[0];
+    
+        for(int i=0; i<n; i++) {
+            if (arr[i] >= max) {
+                max = arr[i];
+            }
+        }
+        
+        return max;
+        
+    }
+}
