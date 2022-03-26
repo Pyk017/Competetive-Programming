@@ -3,37 +3,22 @@
 class Solution:
     def findTriplets(self, arr, n):
         arr.sort()
-        print('sorted array')
-        print(*arr)
-        print()
+        i, j, k, temp = 0, 0, 0, 0
 
-        i, j, k = 0, n - 1, 0
-        temp = 0
+        for i in range(0, n - 2):
+            k = i + 1
+            j = n - 1
 
-        while j > k:
-            k = j - 1  
-            print(f'i={i}  k={k}  j={j} ') 
-
-            while k > i:
-                temp = arr[i] + arr[j] + arr[k]
-                print(f'i={i}  k={k}  j={j} ') 
-                print(f'temp={temp}')
-                if temp == 0:
+            while k < j:
+                temp = arr[i] + arr[k] + arr[j]
+                if (temp == 0):
                     return True
-
                 elif temp < 0:
-                    i += 1
-                    k = j - 1
-                    
-
+                    k += 1
                 else:
+                    j -= 1
 
-                    k -= 1
-
-
-            j -= 1
-
-
+                    
         return False
 
 
