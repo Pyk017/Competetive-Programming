@@ -12,6 +12,17 @@ class Solution:
                 right = mid - 1
                 
         return -1
+
+    def binarySearchRecursive(self, arr, start, end, target): 
+        if (start > end): return -1
+        
+        mid = (start + end) // 2
+        
+        if (arr[mid] == target): return mid
+        
+        if (arr[mid] > target): return self.binarySearchRecursive(arr, start, mid - 1, target)
+        
+        if (arr[mid] < target): return self.binarySearchRecursive(arr, mid + 1, end, target)
           
 
 if __name__ == '__main__':

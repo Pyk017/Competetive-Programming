@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include<cmath>
 using namespace std;
 
 class Solution{
@@ -19,6 +20,18 @@ public:
         }
         
         return -1;
+    }
+
+    int binarySearchIterative(int arr[], int start, int end, int target) {
+        if (start > end) return -1;
+
+        int mid = floor((start + end) / 2);
+
+        if (arr[mid] == target) return mid;
+
+        if (arr[mid] > target) return binarySearchIterative(arr, start, mid - 1, target);
+
+        if (arr[mid] < target) return binarySearchIterative(arr, mid + 1, end, target); 
     }
 };
 
