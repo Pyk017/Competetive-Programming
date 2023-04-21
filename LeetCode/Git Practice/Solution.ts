@@ -17,3 +17,7 @@ function CommitFourth() {
 function CommitFifth() {
   return false;
 }
+
+function FeatureB() {
+  return false;
+}
