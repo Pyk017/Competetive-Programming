@@ -7,5 +7,9 @@ function CommitSecond() {
 }
 
 function CommitThird() {
-  return true;
+  return false;
+}
+
+function CommitFourth() {
+  return false;
 }
