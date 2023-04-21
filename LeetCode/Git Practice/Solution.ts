@@ -1,0 +1,3 @@
+function CommitFirst() {
+  return true;
+}
