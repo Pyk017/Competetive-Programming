@@ -5,3 +5,7 @@ function CommitFirst() {
 function CommitSecond() {
   return true;
 }
+
+function CommitThird() {
+  return true;
+}
