@@ -1,27 +1,27 @@
-function CommitFirst() {
+function CommitFirst(): boolean {
   return true;
 }
 
-function CommitSecond() {
+function CommitSecond(): boolean {
   return true;
 }
 
-function CommitThird() {
+function CommitThird(): boolean {
   return false;
 }
 
-function CommitFourth() {
+function CommitFourth(): boolean {
   return false;
 }
 
-function CommitFifth() {
+function CommitFifth(): boolean {
   return false;
 }
 
-function FeatureA() {
+function FeatureA(): boolean {
   return true;
 }
 
-function FeatureB() {
+function FeatureB(): boolean {
   return false;
 }
