@@ -19,5 +19,9 @@ function CommitFifth() {
 }
 
 function FeatureA() {
+  return true;
+}
+
+function FeatureB() {
   return false;
 }
